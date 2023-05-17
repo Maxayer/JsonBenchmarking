@@ -32,8 +32,7 @@ public class JsonServerTest extends Simulation {
 
     ScenarioBuilder postAndGetScenario = scenario("Execute post and get scenario")
             .exec(postAndGetJson);
-
-    HttpProtocolBuilder httpProtocol = http.baseUrl(format("%s:%s", "http://192.168.49.2", "30333"));
+    HttpProtocolBuilder httpProtocol = http.baseUrl(format("http://%s:%s", System.getProperty("minikubeIP"), "30333"));
 
     {
         setUp(
