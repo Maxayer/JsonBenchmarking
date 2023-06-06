@@ -40,7 +40,8 @@ public class JsonServerTest extends Simulation {
                         atOnceUsers(1)
                 )
 
-        ).protocols(httpProtocol);
+        ).assertions(global().failedRequests().count().is(0L))
+                .protocols(httpProtocol);
 
     }
 
